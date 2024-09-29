@@ -1,0 +1,25 @@
+services:
+
+    mariadb:
+        image: mariadb:latest
+        container_name: mariadb
+        restart: unless-stopped
+        environment:
+            - MYSQL_ROOT_PASSWORD=p4ssw0rd
+            - MYSQL_USER=genbyte
+            - MYSQL_PASSWORD=p4ssw0rd
+            - MYSQL_DATABASE=easyappointments
+        volumes:
+            - ./db:/var/lib/mysql
+
+    easyappointments:
+        image: alextselegidis/easyappointments
+        container_name: easy-appointments
+        ports:
+            - "8080:80"
+        restart: unless-stopped
+        environment:
+            - DB_HOST=mariadb
+            - DB_NAME=easyappointments
+            - DB_USERNAME=genbyte
+            - DB_PASSWORD=p4ssw0rd
