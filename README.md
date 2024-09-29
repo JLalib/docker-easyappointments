@@ -18,3 +18,6 @@ genbyte@docker:~/docker/eassyappointments$ cp email.php email.php-old
 Copiar fichero email.php de local a container
 
 genbyte@docker:~/docker/eassyappointments$ docker cp email.php easy-appointments:/var/www/html/application/config/email.php
+
+![image](https://github.com/user-attachments/assets/4c2633a2-0387-4e49-94fd-63f00d49920d)
+
